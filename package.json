@@ -1,0 +1,88 @@
+{
+  "name": "NodeQuickStart",
+  "version": "1.0.0",
+  "description": "Node + ES6 quickstart project",
+  "main": "index.js",
+  "author": "Iegor Kozakov <kozakov.e@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "rimraf ./dist && babel -d ./dist ./src -s",
+    "dev": "nodemon dev.js",
+    "lint:js": "eslint ./src",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-config-prettier": "^1.5.0",
+    "eslint-plugin-import": "^2.2.0",
+    "lint-staged": "^3.4.0",
+    "nodemon": "^1.11.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^0.22.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-param-reassign": [
+        0,
+        {
+          "props": true,
+          "ignorePropertyModificationsFor": [
+            "ctx"
+          ]
+        }
+      ],
+      "no-underscore-dangle": [
+        0,
+        {
+          "allowAfterThis": true,
+          "allowAfterSuper": true
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-latest": "^6.24.0",
+    "bcrypt-nodejs": "^0.0.3",
+    "dotenv": "^4.0.0",
+    "jsonwebtoken": "^7.4.3",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-mount": "^3.0.0",
+    "koa-route": "^3.2.0",
+    "koa-send": "^4.1.0",
+    "koa-socket": "^4.4.0",
+    "koa2-cors": "^2.0.3",
+    "lodash": "^4.17.4",
+    "mongoose": "4.10.8",
+    "rimraf": "^2.6.1",
+    "uuid": "^3.1.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
